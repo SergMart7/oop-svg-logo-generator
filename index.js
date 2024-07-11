@@ -19,18 +19,18 @@ const questions = [
     {
         type: 'input',
         name: 'fontColour',
-        message: 'Enter the font colour (either keyword or hexadecimal value):',
+        message: 'Enter the font colour (either keyword or hexadecimal value, please include #):',
     },
     {
         type: 'list',
         name: 'shape',
-        message: 'choose a shape for your logo:',
+        message: 'Select a shape for your logo:',
         choices: ['Square', 'Circle', 'Triangle'],
     },
     {
         type: 'input',
         name: 'shapeColour',
-        message: ' Enter the shape (background colour) colour (keyword or haxadecimal value);',
+        message: 'Enter the shape (background colour) colour (keyword or haxadecimal value, please include #);',
     },
 ];
 
@@ -47,7 +47,7 @@ inquirer.prompt(questions).then(answers => {
             shape = new Square();
             break;
     }
-    shape.setColor(answers.shapeColor);
+    shape.setColor(answers.shapeColour);
 
     const svgContent = `
 <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
